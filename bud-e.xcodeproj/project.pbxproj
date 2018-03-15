@@ -8,12 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		996D66082057FE0C005A25BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 996D66072057FE0C005A25BB /* AppDelegate.swift */; };
-		996D660A2057FE0C005A25BB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 996D66092057FE0C005A25BB /* ViewController.swift */; };
 		996D660D2057FE0C005A25BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 996D660B2057FE0C005A25BB /* Main.storyboard */; };
 		996D66102057FE0C005A25BB /* bud_e.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 996D660E2057FE0C005A25BB /* bud_e.xcdatamodeld */; };
 		996D66122057FE0C005A25BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 996D66112057FE0C005A25BB /* Assets.xcassets */; };
 		996D66152057FE0C005A25BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 996D66132057FE0C005A25BB /* LaunchScreen.storyboard */; };
 		996D66202057FE0C005A25BB /* bud_eTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 996D661F2057FE0C005A25BB /* bud_eTests.swift */; };
+		99D656FE2059267000169D29 /* TabsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D656FD2059267000169D29 /* TabsController.swift */; };
+		99D65701205928FF00169D29 /* AuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D65700205928FF00169D29 /* AuthController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,7 +30,6 @@
 /* Begin PBXFileReference section */
 		996D66042057FE0C005A25BB /* bud-e.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "bud-e.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		996D66072057FE0C005A25BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		996D66092057FE0C005A25BB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		996D660C2057FE0C005A25BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		996D660F2057FE0C005A25BB /* bud_e.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = bud_e.xcdatamodel; sourceTree = "<group>"; };
 		996D66112057FE0C005A25BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -38,6 +38,8 @@
 		996D661B2057FE0C005A25BB /* bud-eTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "bud-eTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		996D661F2057FE0C005A25BB /* bud_eTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bud_eTests.swift; sourceTree = "<group>"; };
 		996D66212057FE0C005A25BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		99D656FD2059267000169D29 /* TabsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsController.swift; sourceTree = "<group>"; };
+		99D65700205928FF00169D29 /* AuthController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,8 +81,9 @@
 		996D66062057FE0C005A25BB /* bud-e */ = {
 			isa = PBXGroup;
 			children = (
+				99D65702205930DD00169D29 /* Data */,
+				99D656FB2059251200169D29 /* Controllers */,
 				996D66072057FE0C005A25BB /* AppDelegate.swift */,
-				996D66092057FE0C005A25BB /* ViewController.swift */,
 				996D660B2057FE0C005A25BB /* Main.storyboard */,
 				996D66112057FE0C005A25BB /* Assets.xcassets */,
 				996D66132057FE0C005A25BB /* LaunchScreen.storyboard */,
@@ -97,6 +100,38 @@
 				996D66212057FE0C005A25BB /* Info.plist */,
 			);
 			path = "bud-eTests";
+			sourceTree = "<group>";
+		};
+		99D656FB2059251200169D29 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				99D656FF205928CB00169D29 /* Auth */,
+				99D656FC2059264500169D29 /* Tabs */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		99D656FC2059264500169D29 /* Tabs */ = {
+			isa = PBXGroup;
+			children = (
+				99D656FD2059267000169D29 /* TabsController.swift */,
+			);
+			path = Tabs;
+			sourceTree = "<group>";
+		};
+		99D656FF205928CB00169D29 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				99D65700205928FF00169D29 /* AuthController.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		99D65702205930DD00169D29 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,7 +237,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				996D660A2057FE0C005A25BB /* ViewController.swift in Sources */,
+				99D656FE2059267000169D29 /* TabsController.swift in Sources */,
+				99D65701205928FF00169D29 /* AuthController.swift in Sources */,
 				996D66082057FE0C005A25BB /* AppDelegate.swift in Sources */,
 				996D66102057FE0C005A25BB /* bud_e.xcdatamodeld in Sources */,
 			);
