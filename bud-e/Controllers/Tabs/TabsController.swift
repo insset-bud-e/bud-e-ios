@@ -11,9 +11,5 @@ import UIKit
 class TabsController: UITabBarController {    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        if !UserDefaults.standard.bool(forKey: "isLogged") {
-            performSegue(withIdentifier: "toLogin", sender: nil)
-        }
     }
 }
