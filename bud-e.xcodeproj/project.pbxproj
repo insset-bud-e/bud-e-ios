@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		99077D8C20CEA062008F3DF7 /* DevicesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99077D8B20CEA062008F3DF7 /* DevicesListViewController.swift */; };
 		996D66082057FE0C005A25BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 996D66072057FE0C005A25BB /* AppDelegate.swift */; };
 		996D660D2057FE0C005A25BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 996D660B2057FE0C005A25BB /* Main.storyboard */; };
 		996D66102057FE0C005A25BB /* bud_e.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 996D660E2057FE0C005A25BB /* bud_e.xcdatamodeld */; };
@@ -27,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		99077D8B20CEA062008F3DF7 /* DevicesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesListViewController.swift; sourceTree = "<group>"; };
 		996D66042057FE0C005A25BB /* bud-e.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "bud-e.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		996D66072057FE0C005A25BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		996D660C2057FE0C005A25BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -58,6 +60,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		99077D8A20CEA02F008F3DF7 /* Devices */ = {
+			isa = PBXGroup;
+			children = (
+				99077D8B20CEA062008F3DF7 /* DevicesListViewController.swift */,
+			);
+			path = Devices;
+			sourceTree = "<group>";
+		};
 		996D65FB2057FE0C005A25BB = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +113,7 @@
 		99D656FB2059251200169D29 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				99077D8A20CEA02F008F3DF7 /* Devices */,
 				99D656FC2059264500169D29 /* Tabs */,
 			);
 			path = Controllers;
@@ -226,6 +237,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99077D8C20CEA062008F3DF7 /* DevicesListViewController.swift in Sources */,
 				99D656FE2059267000169D29 /* TabsController.swift in Sources */,
 				996D66082057FE0C005A25BB /* AppDelegate.swift in Sources */,
 				996D66102057FE0C005A25BB /* bud_e.xcdatamodeld in Sources */,
