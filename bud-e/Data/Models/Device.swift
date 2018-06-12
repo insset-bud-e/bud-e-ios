@@ -10,20 +10,38 @@
 import Foundation
 
 class Device {
-    let id: Int?
+    let id: String?
     let name: String?
     let ipAddress: String?
+    let type: String?
     
     init(payload: [String: Any]) {
-        if let data = payload["data"] as? [String: Any] {
-            id = Int(data["id"] as! String)
-            name = String(data["name"] as! String)
-            ipAddress = String(data["ipAddress"] as! String)
+        if let id = payload["_id"] as? String {
+            self.id = id
         }
         else {
-            id = 0
-            name = "Unknow"
-            ipAddress = "0.0.0.0"
+            self.id = "Unknow"
+        }
+        
+        if let name = payload["name"] as? String {
+            self.name = name
+        }
+        else {
+            self.name = "Unknow"
+        }
+        
+        if let ip = payload["ip"] as? String {
+            self.ipAddress = ip
+        }
+        else {
+            self.ipAddress = "0.0.0.0"
+        }
+        
+        if let type = payload["type"] as? String {
+            self.type = type
+        }
+        else {
+            self.type = "Unknow"
         }
     }
 }
