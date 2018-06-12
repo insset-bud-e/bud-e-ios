@@ -10,6 +10,7 @@
 		99077D8C20CEA062008F3DF7 /* DevicesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99077D8B20CEA062008F3DF7 /* DevicesListViewController.swift */; };
 		99077D9020CEB213008F3DF7 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99077D8F20CEB213008F3DF7 /* Device.swift */; };
 		99077D9220CFF021008F3DF7 /* DeviceSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99077D9120CFF021008F3DF7 /* DeviceSource.swift */; };
+		99077D9420D015A5008F3DF7 /* DeviceDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99077D9320D015A5008F3DF7 /* DeviceDetailsViewController.swift */; };
 		996D66082057FE0C005A25BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 996D66072057FE0C005A25BB /* AppDelegate.swift */; };
 		996D660D2057FE0C005A25BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 996D660B2057FE0C005A25BB /* Main.storyboard */; };
 		996D66102057FE0C005A25BB /* bud_e.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 996D660E2057FE0C005A25BB /* bud_e.xcdatamodeld */; };
@@ -33,6 +34,7 @@
 		99077D8B20CEA062008F3DF7 /* DevicesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesListViewController.swift; sourceTree = "<group>"; };
 		99077D8F20CEB213008F3DF7 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		99077D9120CFF021008F3DF7 /* DeviceSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceSource.swift; sourceTree = "<group>"; };
+		99077D9320D015A5008F3DF7 /* DeviceDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceDetailsViewController.swift; sourceTree = "<group>"; };
 		996D66042057FE0C005A25BB /* bud-e.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "bud-e.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		996D66072057FE0C005A25BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		996D660C2057FE0C005A25BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 			isa = PBXGroup;
 			children = (
 				99077D8B20CEA062008F3DF7 /* DevicesListViewController.swift */,
+				99077D9320D015A5008F3DF7 /* DeviceDetailsViewController.swift */,
 			);
 			path = Devices;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 				996D66082057FE0C005A25BB /* AppDelegate.swift in Sources */,
 				996D66102057FE0C005A25BB /* bud_e.xcdatamodeld in Sources */,
 				99077D9220CFF021008F3DF7 /* DeviceSource.swift in Sources */,
+				99077D9420D015A5008F3DF7 /* DeviceDetailsViewController.swift in Sources */,
 				99077D9020CEB213008F3DF7 /* Device.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

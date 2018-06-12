@@ -33,7 +33,7 @@ class DevicesListViewController: UIViewController, DeviceSourceDelegate, UIColle
         deviceSource.getDevices()
     }
     
-    func didFetch(devices: [Device]) {
+    func didFetchAll(devices: [Device]) {
         DispatchQueue.main.sync {
             self.devices = devices
             self.devicesCollection.reloadData()
@@ -67,5 +67,17 @@ class DevicesListViewController: UIViewController, DeviceSourceDelegate, UIColle
         let size = CGSize(width: (UIScreen.main.bounds.width - 10 - 10 - 10) / 2, height: 100)
         
         return size
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDeviceDetails" {
+            if let cell = sender as? UICollectionViewCell {
+                if let indexPath = devicesCollection.indexPath(for: cell) {
+                    let device = devices?[indexPath.row]
+                    let destination = segue.destination as? DeviceDetailViewController
+                    destination?.deviceID = device?.id
+                }
+            }
+        }
     }
 }

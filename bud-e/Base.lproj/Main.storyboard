@@ -104,6 +104,9 @@
                                             <constraint firstAttribute="trailingMargin" secondItem="fNZ-nl-uyD" secondAttribute="trailing" constant="5" id="uWD-QN-wJi"/>
                                             <constraint firstItem="fNZ-nl-uyD" firstAttribute="leading" secondItem="sAZ-TA-RBQ" secondAttribute="leadingMargin" constant="5" id="xJT-sn-dDt"/>
                                         </constraints>
+                                        <connections>
+                                            <segue destination="1va-rP-mcI" kind="show" identifier="showDeviceDetails" id="Ijs-7n-kKG"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
@@ -129,6 +132,47 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hiP-e9-jRI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="300" y="-107.49625187406298"/>
+        </scene>
+        <!--Device Detail View Controller-->
+        <scene sceneID="xkS-px-0Cw">
+            <objects>
+                <viewController id="1va-rP-mcI" customClass="DeviceDetailViewController" customModule="bud_e" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZrW-Fu-UX5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adresse IP :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MrE-7l-fVP">
+                                <rect key="frame" x="10" y="79" width="355" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g05-Cl-qPO">
+                                <rect key="frame" x="10" y="110" width="355" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="MrE-7l-fVP" firstAttribute="top" secondItem="xN0-GJ-Vxw" secondAttribute="top" constant="15" id="8RN-ir-u60"/>
+                            <constraint firstItem="g05-Cl-qPO" firstAttribute="top" secondItem="MrE-7l-fVP" secondAttribute="bottom" constant="10" id="Cfl-Bs-t3I"/>
+                            <constraint firstItem="xN0-GJ-Vxw" firstAttribute="trailing" secondItem="g05-Cl-qPO" secondAttribute="trailing" constant="10" id="FhI-xv-QZJ"/>
+                            <constraint firstItem="MrE-7l-fVP" firstAttribute="leading" secondItem="xN0-GJ-Vxw" secondAttribute="leading" constant="10" id="JQJ-9m-7Ez"/>
+                            <constraint firstItem="xN0-GJ-Vxw" firstAttribute="trailing" secondItem="MrE-7l-fVP" secondAttribute="trailing" constant="10" id="g5s-Lg-S5y"/>
+                            <constraint firstItem="g05-Cl-qPO" firstAttribute="leading" secondItem="xN0-GJ-Vxw" secondAttribute="leading" constant="10" id="iGp-ib-N8b"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="xN0-GJ-Vxw"/>
+                    </view>
+                    <connections>
+                        <outlet property="ipAddressLabel" destination="MrE-7l-fVP" id="VdH-dk-28A"/>
+                        <outlet property="typeLabel" destination="g05-Cl-qPO" id="TfN-2u-bTw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Jn-LA-4QS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1042" y="-107"/>
         </scene>
     </scenes>
 </document>

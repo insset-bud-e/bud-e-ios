@@ -9,7 +9,13 @@
 import Foundation
 
 protocol DeviceSourceDelegate: class {
-    func didFetch(devices: [Device])
+    func didFetchAll(devices: [Device])
+    func didFetch(device: Device)
+}
+
+extension DeviceSourceDelegate {
+    func didFetchAll(devices: [Device]) {}
+    func didFetch(device: Device) {}
 }
 
 class DeviceSource {
@@ -37,7 +43,33 @@ class DeviceSource {
                         buffer.forEach { device in
                             devices.append(Device(payload: device))
                         }
-                        self?.delegate?.didFetch(devices: devices)
+                        self?.delegate?.didFetchAll(devices: devices)
+                    }
+                }
+            }
+        }
+        
+        downloadTask.resume()
+    }
+    
+    func getDevice(deviceID: String) -> Void {
+        guard let url = URLComponents(string: hostUrl + "device/" + deviceID) else {
+            assertionFailure()
+            return
+        }
+        
+        var request = URLRequest(url: url.url!)
+        request.httpMethod = "GET"
+        
+        let downloadTask = URLSession.shared.dataTask(with: request) { [weak self] (data, response, error) in
+            if let data = data {
+                let rawJSON = try? JSONSerialization.jsonObject(with: data)
+                let json = rawJSON as? [String: Any]
+                
+                if let json = json {
+                    if let buffer = json["res"] as? [[String: Any]] {
+                        let device = Device(payload: buffer[0])
+                        self?.delegate?.didFetch(device: device)
                     }
                 }
             }
