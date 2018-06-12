@@ -11,6 +11,7 @@ import UIKit
 
 class DevicesListViewController: UIViewController, DeviceSourceDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     @IBOutlet weak var devicesCollection: UICollectionView!
+    var pullToRefreshControl: UIRefreshControl!
     
     var devices: [Device]?
     let deviceSource = DeviceSource()
@@ -18,7 +19,17 @@ class DevicesListViewController: UIViewController, DeviceSourceDelegate, UIColle
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        devicesCollection.alwaysBounceVertical = true
+        pullToRefreshControl = UIRefreshControl()
+        pullToRefreshControl.tintColor = UIColor.blue
+        pullToRefreshControl.addTarget(self, action: #selector(pullToRefresh), for: .valueChanged)
+        devicesCollection.addSubview(pullToRefreshControl)
+        
         deviceSource.delegate = self
+        deviceSource.getDevices()
+    }
+    
+    @objc func pullToRefresh() {
         deviceSource.getDevices()
     }
     
@@ -26,6 +37,10 @@ class DevicesListViewController: UIViewController, DeviceSourceDelegate, UIColle
         DispatchQueue.main.sync {
             self.devices = devices
             self.devicesCollection.reloadData()
+            
+            if pullToRefreshControl.isRefreshing {
+                pullToRefreshControl.endRefreshing()
+            }
         }
     }
     
