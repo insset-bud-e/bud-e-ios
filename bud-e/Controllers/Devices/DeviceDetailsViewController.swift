@@ -20,10 +20,18 @@ class DeviceDetailViewController: UIViewController, DeviceSourceDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let deleteDeviceButton = UIBarButtonItem(barButtonSystemItem: .stop, target: self, action: #selector(onDeleteDevicePressed))
+        deleteDeviceButton.tintColor = UIColor(red: 62/255, green: 194/255, blue: 115/255, alpha: 1)
+        self.navigationItem.rightBarButtonItem = deleteDeviceButton
+        
         deviceSource.delegate = self
         if let deviceID = deviceID {
             deviceSource.getDevice(deviceID: deviceID)
         }
+    }
+    
+    @objc func onDeleteDevicePressed() {
+    
     }
     
     func didFetch(device: Device) {

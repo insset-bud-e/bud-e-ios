@@ -11,6 +11,10 @@
 		99077D9020CEB213008F3DF7 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99077D8F20CEB213008F3DF7 /* Device.swift */; };
 		99077D9220CFF021008F3DF7 /* DeviceSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99077D9120CFF021008F3DF7 /* DeviceSource.swift */; };
 		99077D9420D015A5008F3DF7 /* DeviceDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99077D9320D015A5008F3DF7 /* DeviceDetailsViewController.swift */; };
+		99675AAA20D15F9A00734BD2 /* Montserrat-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 99675AA620D15F9700734BD2 /* Montserrat-Italic.ttf */; };
+		99675AAB20D15F9A00734BD2 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 99675AA720D15F9700734BD2 /* Montserrat-Bold.ttf */; };
+		99675AAC20D15F9A00734BD2 /* Montserrat-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 99675AA820D15F9800734BD2 /* Montserrat-BoldItalic.ttf */; };
+		99675AAD20D15F9A00734BD2 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 99675AA920D15F9900734BD2 /* Montserrat-Regular.ttf */; };
 		996D66082057FE0C005A25BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 996D66072057FE0C005A25BB /* AppDelegate.swift */; };
 		996D660D2057FE0C005A25BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 996D660B2057FE0C005A25BB /* Main.storyboard */; };
 		996D66102057FE0C005A25BB /* bud_e.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 996D660E2057FE0C005A25BB /* bud_e.xcdatamodeld */; };
@@ -40,6 +44,10 @@
 		99077D8F20CEB213008F3DF7 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		99077D9120CFF021008F3DF7 /* DeviceSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceSource.swift; sourceTree = "<group>"; };
 		99077D9320D015A5008F3DF7 /* DeviceDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceDetailsViewController.swift; sourceTree = "<group>"; };
+		99675AA620D15F9700734BD2 /* Montserrat-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Italic.ttf"; sourceTree = "<group>"; };
+		99675AA720D15F9700734BD2 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		99675AA820D15F9800734BD2 /* Montserrat-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-BoldItalic.ttf"; sourceTree = "<group>"; };
+		99675AA920D15F9900734BD2 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		996D66042057FE0C005A25BB /* bud-e.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "bud-e.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		996D66072057FE0C005A25BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		996D660C2057FE0C005A25BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -105,6 +113,17 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		99675AA520D15E8A00734BD2 /* Ressources */ = {
+			isa = PBXGroup;
+			children = (
+				99675AA720D15F9700734BD2 /* Montserrat-Bold.ttf */,
+				99675AA820D15F9800734BD2 /* Montserrat-BoldItalic.ttf */,
+				99675AA620D15F9700734BD2 /* Montserrat-Italic.ttf */,
+				99675AA920D15F9900734BD2 /* Montserrat-Regular.ttf */,
+			);
+			path = Ressources;
+			sourceTree = "<group>";
+		};
 		996D65FB2057FE0C005A25BB = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +145,7 @@
 		996D66062057FE0C005A25BB /* bud-e */ = {
 			isa = PBXGroup;
 			children = (
+				99675AA520D15E8A00734BD2 /* Ressources */,
 				99D65702205930DD00169D29 /* Data */,
 				99D656FB2059251200169D29 /* Controllers */,
 				996D66072057FE0C005A25BB /* AppDelegate.swift */,
@@ -273,9 +293,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99675AAC20D15F9A00734BD2 /* Montserrat-BoldItalic.ttf in Resources */,
+				99675AAB20D15F9A00734BD2 /* Montserrat-Bold.ttf in Resources */,
+				99675AAD20D15F9A00734BD2 /* Montserrat-Regular.ttf in Resources */,
 				996D66152057FE0C005A25BB /* LaunchScreen.storyboard in Resources */,
 				996D66122057FE0C005A25BB /* Assets.xcassets in Resources */,
 				996D660D2057FE0C005A25BB /* Main.storyboard in Resources */,
+				99675AAA20D15F9A00734BD2 /* Montserrat-Italic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

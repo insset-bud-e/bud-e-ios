@@ -17,6 +17,8 @@ class NavigationController: UINavigationController {
         self.navigationBar.barTintColor = UIColor(red: 40/255, green: 40/255, blue: 40/255, alpha: 1)
         //#3EC273
         //NSAttributedStringKey.font: UIFont
-        self.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor(red: 62/255, green: 194/255, blue: 115/255, alpha: 1)]
+        self.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor(red: 62/255, green: 194/255, blue: 115/255, alpha: 1), NSAttributedStringKey.font: UIFont(name: "Montserrat-Bold", size: 18) ?? UIFont.boldSystemFont(ofSize: 18)]
+        //#3EC273
+        self.navigationBar.tintColor = UIColor(red: 62/255, green: 194/255, blue: 115/255, alpha: 1)
     }
 }

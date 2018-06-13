@@ -16,12 +16,20 @@ class DevicesDiscoveryListViewController: UIViewController, DeviceDiscoveredSour
     
     var devices: [DeviceDiscovered]?
     let deviceSource = DeviceDiscoveredSource()
+    var deviceSelected: [IndexPath]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let addDevicesButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(onAddDevicesPressed))
+        addDevicesButton.isEnabled = false
+        //#3EC273
+        addDevicesButton.tintColor = UIColor(red: 62/255, green: 194/255, blue: 115/255, alpha: 1)
+        self.navigationItem.rightBarButtonItem = addDevicesButton
+        
         devicesCollection.clipsToBounds = false
         devicesCollection.layer.masksToBounds = false
+        devicesCollection.allowsMultipleSelection = true
         
         devicesCollection.alwaysBounceVertical = true
         pullToRefreshControl = UIRefreshControl()
@@ -36,6 +44,10 @@ class DevicesDiscoveryListViewController: UIViewController, DeviceDiscoveredSour
     
     @objc func pullToRefresh() {
         deviceSource.getDevicesDiscovered()
+    }
+    
+    @objc func onAddDevicesPressed() {
+        
     }
     
     func didFetch(devices: [DeviceDiscovered]) {
@@ -76,5 +88,26 @@ class DevicesDiscoveryListViewController: UIViewController, DeviceDiscoveredSour
         let size = CGSize(width: (UIScreen.main.bounds.width - 10 - 10 - 10) / 2, height: 100)
         
         return size
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.deviceSelected = collectionView.indexPathsForSelectedItems;
+        
+        if (self.deviceSelected?.count)! > 0 {
+            self.navigationItem.rightBarButtonItem?.isEnabled = true
+        }
+        else {
+            self.navigationItem.rightBarButtonItem?.isEnabled = false
+        }
+    }
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        self.deviceSelected = collectionView.indexPathsForSelectedItems;
+        
+        if (self.deviceSelected?.count)! > 0 {
+            self.navigationItem.rightBarButtonItem?.isEnabled = true
+        }
+        else {
+            self.navigationItem.rightBarButtonItem?.isEnabled = false
+        }
     }
 }

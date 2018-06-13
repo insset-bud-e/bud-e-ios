@@ -22,3 +22,29 @@ class CollectionCellController: UICollectionViewCell {
         self.backgroundColor = UIColor.white
     }
 }
+
+class CollectionCellDiscoveredController: CollectionCellController {
+    override var isSelected: Bool {
+        didSet {
+            if self.isSelected {
+                //#3ec273
+                self.backgroundColor = UIColor(red: 62/255, green: 194/255, blue: 115/255, alpha: 1)
+            }
+            else {
+                self.backgroundColor = UIColor.white
+            }
+        }
+    }
+    
+    override var isHighlighted: Bool {
+        didSet {
+            if self.isHighlighted {
+                //#78d49d
+                self.backgroundColor = UIColor(red: 120/255, green: 212/255, blue: 157/255, alpha: 1)
+            }
+            else {
+                //No color
+            }
+        }
+    }
+}
