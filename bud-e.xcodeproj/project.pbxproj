@@ -17,9 +17,12 @@
 		996D66122057FE0C005A25BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 996D66112057FE0C005A25BB /* Assets.xcassets */; };
 		996D66152057FE0C005A25BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 996D66132057FE0C005A25BB /* LaunchScreen.storyboard */; };
 		996D66202057FE0C005A25BB /* bud_eTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 996D661F2057FE0C005A25BB /* bud_eTests.swift */; };
+		999E61BE20D123C700F30A8A /* DeviceDiscovered.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999E61BD20D123C700F30A8A /* DeviceDiscovered.swift */; };
+		999E61C020D1246000F30A8A /* DeviceDiscoveredSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999E61BF20D1246000F30A8A /* DeviceDiscoveredSource.swift */; };
 		99D656FE2059267000169D29 /* TabsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D656FD2059267000169D29 /* TabsController.swift */; };
 		99FF09AF20D10A9C003882F1 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FF09AE20D10A9C003882F1 /* NavigationController.swift */; };
 		99FF09B220D10FB0003882F1 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FF09B120D10FB0003882F1 /* Cell.swift */; };
+		99FF09B420D11FCB003882F1 /* DevicesDiscoveryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FF09B320D11FCB003882F1 /* DevicesDiscoveryListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,9 +50,12 @@
 		996D661B2057FE0C005A25BB /* bud-eTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "bud-eTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		996D661F2057FE0C005A25BB /* bud_eTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bud_eTests.swift; sourceTree = "<group>"; };
 		996D66212057FE0C005A25BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		999E61BD20D123C700F30A8A /* DeviceDiscovered.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceDiscovered.swift; sourceTree = "<group>"; };
+		999E61BF20D1246000F30A8A /* DeviceDiscoveredSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceDiscoveredSource.swift; sourceTree = "<group>"; };
 		99D656FD2059267000169D29 /* TabsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsController.swift; sourceTree = "<group>"; };
 		99FF09AE20D10A9C003882F1 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		99FF09B120D10FB0003882F1 /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
+		99FF09B320D11FCB003882F1 /* DevicesDiscoveryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesDiscoveryListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +82,7 @@
 				99FF09B020D10FA2003882F1 /* Collection */,
 				99077D8B20CEA062008F3DF7 /* DevicesListViewController.swift */,
 				99077D9320D015A5008F3DF7 /* DeviceDetailsViewController.swift */,
+				99FF09B320D11FCB003882F1 /* DevicesDiscoveryListViewController.swift */,
 			);
 			path = Devices;
 			sourceTree = "<group>";
@@ -84,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				99077D9120CFF021008F3DF7 /* DeviceSource.swift */,
+				999E61BF20D1246000F30A8A /* DeviceDiscoveredSource.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -92,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				99077D8F20CEB213008F3DF7 /* Device.swift */,
+				999E61BD20D123C700F30A8A /* DeviceDiscovered.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -291,8 +300,11 @@
 				996D66102057FE0C005A25BB /* bud_e.xcdatamodeld in Sources */,
 				99FF09B220D10FB0003882F1 /* Cell.swift in Sources */,
 				99077D9220CFF021008F3DF7 /* DeviceSource.swift in Sources */,
+				99FF09B420D11FCB003882F1 /* DevicesDiscoveryListViewController.swift in Sources */,
+				999E61C020D1246000F30A8A /* DeviceDiscoveredSource.swift in Sources */,
 				99077D9420D015A5008F3DF7 /* DeviceDetailsViewController.swift in Sources */,
 				99077D9020CEB213008F3DF7 /* Device.swift in Sources */,
+				999E61BE20D123C700F30A8A /* DeviceDiscovered.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
