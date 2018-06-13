@@ -73,8 +73,13 @@ class DevicesListViewController: UIViewController, DeviceSourceDelegate, UIColle
         if segue.identifier == "showDeviceDetails" {
             if let cell = sender as? UICollectionViewCell {
                 if let indexPath = devicesCollection.indexPath(for: cell) {
+                    let backItem = UIBarButtonItem()
                     let device = devices?[indexPath.row]
                     let destination = segue.destination as? DeviceDetailViewController
+                    
+                    backItem.title = ""
+                    navigationItem.backBarButtonItem = backItem
+                    
                     destination?.deviceID = device?.id
                 }
             }

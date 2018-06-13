@@ -29,10 +29,27 @@ class DeviceDetailViewController: UIViewController, DeviceSourceDelegate {
     func didFetch(device: Device) {
         DispatchQueue.main.sync {
             self.device = device
-            
-            self.title = device.name
-            self.ipAddressLabel.text = "Adresse IP : " + device.ipAddress!
-            self.typeLabel.text = "Type : " + device.type!
+            refreshUI()
+        }
+    }
+    
+    func refreshUI() {
+        if let name = device?.name {
+            self.title = name
+        }
+        
+        if let ipAddress = device?.ipAddress {
+            self.ipAddressLabel.text = "Adresse IP: " + ipAddress
+        }
+        else {
+            self.ipAddressLabel.text = "Adresse IP: unknow"
+        }
+        
+        if let type = device?.type {
+            self.typeLabel.text = "Type: " + type
+        }
+        else {
+            self.typeLabel.text = "Type: unknow"
         }
     }
 }
