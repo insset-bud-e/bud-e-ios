@@ -90,8 +90,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fNZ-nl-uyD">
-                                                    <rect key="frame" x="13" y="18" width="124" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fNZ-nl-uyD">
+                                                    <rect key="frame" x="13" y="64.5" width="124" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -99,7 +99,7 @@
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="fNZ-nl-uyD" firstAttribute="top" secondItem="sAZ-TA-RBQ" secondAttribute="topMargin" constant="10" id="bH2-n3-1Vi"/>
+                                            <constraint firstItem="fNZ-nl-uyD" firstAttribute="centerY" secondItem="sAZ-TA-RBQ" secondAttribute="centerY" id="WBT-cN-vRb"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="fNZ-nl-uyD" secondAttribute="trailing" constant="5" id="uWD-QN-wJi"/>
                                             <constraint firstItem="fNZ-nl-uyD" firstAttribute="leading" secondItem="sAZ-TA-RBQ" secondAttribute="leadingMargin" constant="5" id="xJT-sn-dDt"/>
                                         </constraints>

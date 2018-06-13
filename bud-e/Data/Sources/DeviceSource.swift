@@ -19,6 +19,7 @@ extension DeviceSourceDelegate {
 }
 
 class DeviceSource {
+    //let hostUrl = "http://172.20.10.6:5000/"
     let hostUrl = "https://bud-e-server.herokuapp.com/"
     
     weak var delegate: DeviceSourceDelegate?
