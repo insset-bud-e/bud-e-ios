@@ -11,7 +11,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item 2-->
+        <!--Paramètres-->
         <scene sceneID="oaq-jw-tZa">
             <objects>
                 <viewController id="Qke-N8-BSH" sceneMemberID="viewController">
@@ -21,7 +21,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="gCj-Jg-DVI"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="ZMG-2k-BGc"/>
+                    <tabBarItem key="tabBarItem" title="Paramètres" id="ZMG-2k-BGc"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DP2-3F-NST" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -49,7 +49,7 @@
         <!--Mes Périphériques-->
         <scene sceneID="UGT-y6-K9I">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gY1-gX-2CZ" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gY1-gX-2CZ" customClass="NavigationController" customModule="bud_e" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Mes Périphériques" id="OyY-lq-M6n"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="NAg-lH-oAi">
@@ -83,7 +83,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="deviceCell" id="sAZ-TA-RBQ">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="deviceCell" id="sAZ-TA-RBQ" customClass="CollectionCellController" customModule="bud_e" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -98,7 +98,6 @@
                                                 </label>
                                             </subviews>
                                         </view>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="fNZ-nl-uyD" firstAttribute="top" secondItem="sAZ-TA-RBQ" secondAttribute="topMargin" constant="10" id="bH2-n3-1Vi"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="fNZ-nl-uyD" secondAttribute="trailing" constant="5" id="uWD-QN-wJi"/>

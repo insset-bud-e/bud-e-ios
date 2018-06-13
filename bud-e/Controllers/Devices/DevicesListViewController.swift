@@ -19,6 +19,9 @@ class DevicesListViewController: UIViewController, DeviceSourceDelegate, UIColle
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        devicesCollection.clipsToBounds = false
+        devicesCollection.layer.masksToBounds = false
+        
         devicesCollection.alwaysBounceVertical = true
         pullToRefreshControl = UIRefreshControl()
         pullToRefreshControl.tintColor = UIColor.blue
