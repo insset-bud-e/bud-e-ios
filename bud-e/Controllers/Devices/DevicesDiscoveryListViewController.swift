@@ -11,6 +11,7 @@ import UIKit
 
 class DevicesDiscoveryListViewController: UIViewController, DeviceDiscoveredSourceDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     @IBOutlet weak var devicesCollection: UICollectionView!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     var pullToRefreshControl: UIRefreshControl!
     
     var devices: [DeviceDiscovered]?
@@ -24,12 +25,13 @@ class DevicesDiscoveryListViewController: UIViewController, DeviceDiscoveredSour
         
         devicesCollection.alwaysBounceVertical = true
         pullToRefreshControl = UIRefreshControl()
-        pullToRefreshControl.tintColor = UIColor.blue
+        pullToRefreshControl.tintColor = UIColor(red: 40/255, green: 40/255, blue: 40/255, alpha: 1)
         pullToRefreshControl.addTarget(self, action: #selector(pullToRefresh), for: .valueChanged)
         devicesCollection.addSubview(pullToRefreshControl)
         
         deviceSource.delegate = self
         deviceSource.getDevicesDiscovered()
+        spinner.startAnimating()
     }
     
     @objc func pullToRefresh() {
@@ -37,12 +39,16 @@ class DevicesDiscoveryListViewController: UIViewController, DeviceDiscoveredSour
     }
     
     func didFetch(devices: [DeviceDiscovered]) {
-        DispatchQueue.main.sync {
+        DispatchQueue.main.async {
             self.devices = devices
             self.devicesCollection.reloadData()
             
-            if pullToRefreshControl.isRefreshing {
-                pullToRefreshControl.endRefreshing()
+            if self.spinner.isAnimating {
+                self.spinner.stopAnimating()
+            }
+            
+            if self.pullToRefreshControl.isRefreshing {
+                self.pullToRefreshControl.endRefreshing()
             }
         }
     }

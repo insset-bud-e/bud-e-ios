@@ -38,7 +38,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="hu9-iY-CvX" kind="relationship" relationship="viewControllers" id="VP3-lo-DrC"/>
+                        <segue destination="Bte-bJ-ssa" kind="relationship" relationship="viewControllers" id="VP3-lo-DrC"/>
                         <segue destination="gY1-gX-2CZ" kind="relationship" relationship="viewControllers" id="gqq-Di-qll"/>
                         <segue destination="Qke-N8-BSH" kind="relationship" relationship="viewControllers" id="j54-Pf-7hQ"/>
                     </connections>
@@ -56,7 +56,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="W3f-jW-Iy9">
-                                <rect key="frame" x="10" y="30" width="355" height="588"/>
+                                <rect key="frame" x="10" y="74" width="355" height="544"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="tmJ-Mk-0Mh">
                                     <size key="itemSize" width="150" height="150"/>
@@ -92,24 +92,31 @@
                                     <outlet property="delegate" destination="hu9-iY-CvX" id="atY-pO-6Q3"/>
                                 </connections>
                             </collectionView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="0YL-eo-i6R">
+                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                                <color key="color" red="0.15686274509803921" green="0.15686274509803921" blue="0.15686274509803921" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="W3f-jW-Iy9" firstAttribute="top" secondItem="3r1-Um-Agm" secondAttribute="top" constant="10" id="7uS-w2-50i"/>
                             <constraint firstItem="3r1-Um-Agm" firstAttribute="trailing" secondItem="W3f-jW-Iy9" secondAttribute="trailing" constant="10" id="D5O-js-73F"/>
+                            <constraint firstItem="0YL-eo-i6R" firstAttribute="centerX" secondItem="1GQ-VC-n6O" secondAttribute="centerX" id="JpG-J1-a1f"/>
                             <constraint firstItem="3r1-Um-Agm" firstAttribute="bottom" secondItem="W3f-jW-Iy9" secondAttribute="bottom" id="Rfh-D6-UYe"/>
                             <constraint firstItem="W3f-jW-Iy9" firstAttribute="leading" secondItem="3r1-Um-Agm" secondAttribute="leading" constant="10" id="dbu-cd-g8B"/>
+                            <constraint firstItem="0YL-eo-i6R" firstAttribute="centerY" secondItem="1GQ-VC-n6O" secondAttribute="centerY" id="kde-8h-Fvc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3r1-Um-Agm"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Découverte" id="YS3-xE-5LN"/>
+                    <navigationItem key="navigationItem" title="Découverte" id="w2r-sv-Pw9"/>
                     <connections>
                         <outlet property="devicesCollection" destination="W3f-jW-Iy9" id="zdj-qr-yWP"/>
+                        <outlet property="spinner" destination="0YL-eo-i6R" id="Qcs-8y-BBA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e01-mM-rtN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-484" y="-788.45577211394311"/>
+            <point key="canvasLocation" x="300" y="-788"/>
         </scene>
         <!--Mes Périphériques-->
         <scene sceneID="UGT-y6-K9I">
@@ -237,6 +244,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Jn-LA-4QS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1042" y="-107"/>
+        </scene>
+        <!--Découverte-->
+        <scene sceneID="nWT-co-2WM">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Bte-bJ-ssa" customClass="NavigationController" customModule="bud_e" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Découverte" id="YS3-xE-5LN"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hpN-HZ-K98">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="hu9-iY-CvX" kind="relationship" relationship="rootViewController" id="Z7K-gI-zU4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kHb-SD-tq5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-484" y="-788.45577211394311"/>
         </scene>
     </scenes>
 </document>

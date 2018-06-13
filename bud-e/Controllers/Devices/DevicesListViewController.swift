@@ -24,7 +24,7 @@ class DevicesListViewController: UIViewController, DeviceSourceDelegate, UIColle
         
         devicesCollection.alwaysBounceVertical = true
         pullToRefreshControl = UIRefreshControl()
-        pullToRefreshControl.tintColor = UIColor.blue
+        pullToRefreshControl.tintColor = UIColor(red: 40/255, green: 40/255, blue: 40/255, alpha: 1)
         pullToRefreshControl.addTarget(self, action: #selector(pullToRefresh), for: .valueChanged)
         devicesCollection.addSubview(pullToRefreshControl)
         
