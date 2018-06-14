@@ -11,6 +11,7 @@ import UIKit
 
 class DevicesListViewController: UIViewController, DeviceSourceDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     @IBOutlet weak var devicesCollection: UICollectionView!
+    @IBOutlet weak var noDevicesLabel: UILabel!
     var pullToRefreshControl: UIRefreshControl!
     
     var devices: [Device]?
@@ -36,6 +37,7 @@ class DevicesListViewController: UIViewController, DeviceSourceDelegate, UIColle
     }
     
     @objc func pullToRefresh() {
+        self.noDevicesLabel.isHidden = true
         deviceSource.getDevices()
     }
     
@@ -51,16 +53,28 @@ class DevicesListViewController: UIViewController, DeviceSourceDelegate, UIColle
                     }
                 }
             }
+            if (self.devices?.count)! > 0 {
+                self.noDevicesLabel.isHidden = true
+            }
+            else {
+                self.noDevicesLabel.isHidden = false
+            }
         }
     }
     
     func didFetchAll(devices: [Device]) {
         DispatchQueue.main.sync {
-            self.devices = devices
-            self.devicesCollection.reloadData()
-            
             if pullToRefreshControl.isRefreshing {
                 pullToRefreshControl.endRefreshing()
+            }
+            
+            if devices.count > 0 {
+                self.devices = devices
+                self.devicesCollection.reloadData()
+                self.noDevicesLabel.isHidden = true
+            }
+            else {
+                self.noDevicesLabel.isHidden = false
             }
         }
     }

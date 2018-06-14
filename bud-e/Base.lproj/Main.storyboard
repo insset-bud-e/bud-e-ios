@@ -101,6 +101,12 @@
                                 <rect key="frame" x="169" y="315" width="37" height="37"/>
                                 <color key="color" red="0.15686274509803921" green="0.15686274509803921" blue="0.15686274509803921" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aucun périphérique n'a été détecté" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lON-Wo-1zr">
+                                <rect key="frame" x="10" y="323" width="355" height="21"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -110,12 +116,16 @@
                             <constraint firstItem="3r1-Um-Agm" firstAttribute="bottom" secondItem="W3f-jW-Iy9" secondAttribute="bottom" id="Rfh-D6-UYe"/>
                             <constraint firstItem="W3f-jW-Iy9" firstAttribute="leading" secondItem="3r1-Um-Agm" secondAttribute="leading" constant="10" id="dbu-cd-g8B"/>
                             <constraint firstItem="0YL-eo-i6R" firstAttribute="centerY" secondItem="1GQ-VC-n6O" secondAttribute="centerY" id="kde-8h-Fvc"/>
+                            <constraint firstItem="lON-Wo-1zr" firstAttribute="centerY" secondItem="1GQ-VC-n6O" secondAttribute="centerY" id="qTW-Cy-L8c"/>
+                            <constraint firstItem="3r1-Um-Agm" firstAttribute="trailing" secondItem="lON-Wo-1zr" secondAttribute="trailing" constant="10" id="xZL-PP-2dg"/>
+                            <constraint firstItem="lON-Wo-1zr" firstAttribute="leading" secondItem="3r1-Um-Agm" secondAttribute="leading" constant="10" id="yPE-5c-BQV"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3r1-Um-Agm"/>
                     </view>
                     <navigationItem key="navigationItem" title="Découverte" id="w2r-sv-Pw9"/>
                     <connections>
                         <outlet property="devicesCollection" destination="W3f-jW-Iy9" id="zdj-qr-yWP"/>
+                        <outlet property="noDevicesLabel" destination="lON-Wo-1zr" id="mtW-3k-1jm"/>
                         <outlet property="spinner" destination="0YL-eo-i6R" id="Qcs-8y-BBA"/>
                     </connections>
                 </viewController>
@@ -200,19 +210,29 @@
                                     <outlet property="delegate" destination="YAS-zg-Bc6" id="385-B1-ipq"/>
                                 </connections>
                             </collectionView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vous n'avez aucun périphérique" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aHX-b9-Ya9">
+                                <rect key="frame" x="10" y="323" width="355" height="21"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="xm3-Q9-rAk" firstAttribute="leading" secondItem="ICX-TM-pQ2" secondAttribute="leading" constant="10" id="1aT-M1-x13"/>
                             <constraint firstItem="ICX-TM-pQ2" firstAttribute="bottom" secondItem="xm3-Q9-rAk" secondAttribute="bottom" id="E3f-oC-eYG"/>
                             <constraint firstItem="xm3-Q9-rAk" firstAttribute="top" secondItem="ICX-TM-pQ2" secondAttribute="top" constant="10" id="LQo-Ss-XyZ"/>
+                            <constraint firstItem="aHX-b9-Ya9" firstAttribute="centerY" secondItem="8DF-3e-B41" secondAttribute="centerY" id="MJW-zl-9hL"/>
+                            <constraint firstItem="aHX-b9-Ya9" firstAttribute="leading" secondItem="ICX-TM-pQ2" secondAttribute="leading" constant="10" id="Xkd-AF-JpR"/>
                             <constraint firstItem="ICX-TM-pQ2" firstAttribute="trailing" secondItem="xm3-Q9-rAk" secondAttribute="trailing" constant="10" id="YUx-QW-olf"/>
+                            <constraint firstItem="ICX-TM-pQ2" firstAttribute="trailing" secondItem="aHX-b9-Ya9" secondAttribute="trailing" constant="10" id="hpR-qE-fIm"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ICX-TM-pQ2"/>
                     </view>
                     <navigationItem key="navigationItem" title="Mes périphériques" id="ikg-RR-B1w"/>
                     <connections>
                         <outlet property="devicesCollection" destination="xm3-Q9-rAk" id="oZ4-y3-uo3"/>
+                        <outlet property="noDevicesLabel" destination="aHX-b9-Ya9" id="foR-dI-Fq1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hiP-e9-jRI" userLabel="First Responder" sceneMemberID="firstResponder"/>

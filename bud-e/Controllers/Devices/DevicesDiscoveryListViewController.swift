@@ -12,6 +12,7 @@ import UIKit
 class DevicesDiscoveryListViewController: UIViewController, DeviceDiscoveredSourceDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     @IBOutlet weak var devicesCollection: UICollectionView!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
+    @IBOutlet weak var noDevicesLabel: UILabel!
     var pullToRefreshControl: UIRefreshControl!
     
     var devices: [DeviceDiscovered]?
@@ -43,6 +44,7 @@ class DevicesDiscoveryListViewController: UIViewController, DeviceDiscoveredSour
     }
     
     @objc func pullToRefresh() {
+        self.noDevicesLabel.isHidden = true
         deviceSource.getDevicesDiscovered()
     }
     
@@ -52,15 +54,21 @@ class DevicesDiscoveryListViewController: UIViewController, DeviceDiscoveredSour
     
     func didFetch(devices: [DeviceDiscovered]) {
         DispatchQueue.main.async {
-            self.devices = devices
-            self.devicesCollection.reloadData()
-            
             if self.spinner.isAnimating {
                 self.spinner.stopAnimating()
             }
             
             if self.pullToRefreshControl.isRefreshing {
                 self.pullToRefreshControl.endRefreshing()
+            }
+            
+            if devices.count > 0 {
+                self.devices = devices
+                self.devicesCollection.reloadData()
+                self.noDevicesLabel.isHidden = true
+            }
+            else {
+                self.noDevicesLabel.isHidden = false
             }
         }
     }

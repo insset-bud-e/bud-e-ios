@@ -12,6 +12,9 @@ class TabsController: UITabBarController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        let discovereryTabBar = (self.tabBar.items?[0])! as UITabBarItem
+        discovereryTabBar.image = UIImage(named: "search")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
+        
         //#282828
         self.tabBar.barTintColor = UIColor(red: 40/255, green: 40/255, blue: 40/255, alpha: 1)
         //#3EC273
