@@ -16,6 +16,7 @@ class DeviceDetailViewController: UIViewController, DeviceSourceDelegate {
     var deviceID: String?
     var device: Device?
     let deviceSource = DeviceSource()
+    let nc = NotificationCenter.default
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,13 +32,24 @@ class DeviceDetailViewController: UIViewController, DeviceSourceDelegate {
     }
     
     @objc func onDeleteDevicePressed() {
-    
+        if let deviceID = deviceID {
+            deviceSource.deleteDevice(deviceID: deviceID)
+        }
     }
     
     func didFetch(device: Device) {
         DispatchQueue.main.sync {
             self.device = device
             refreshUI()
+        }
+    }
+    
+    func didDeviceDeleted(message: String) {
+        DispatchQueue.main.sync {
+            if message == "Device forgotten." {
+                nc.post(name: Notification.Name(rawValue: "deviceDeleted"), object: nil, userInfo: ["id": self.deviceID ?? "-1"])
+                self.navigationController?.popViewController(animated: true)
+            }
         }
     }
     

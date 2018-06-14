@@ -11,16 +11,18 @@ import Foundation
 protocol DeviceSourceDelegate: class {
     func didFetchAll(devices: [Device])
     func didFetch(device: Device)
+    func didDeviceDeleted(message: String)
 }
 
 extension DeviceSourceDelegate {
     func didFetchAll(devices: [Device]) {}
     func didFetch(device: Device) {}
+    func didDeviceDeleted(message: String) {}
 }
 
 class DeviceSource {
-    //let hostUrl = "http://172.20.10.6:5000/"
-    let hostUrl = "https://bud-e-server.herokuapp.com/"
+    let hostUrl = "http://172.20.10.6:5000/"
+    //let hostUrl = "https://bud-e-server.herokuapp.com/"
     
     weak var delegate: DeviceSourceDelegate?
     
@@ -71,6 +73,31 @@ class DeviceSource {
                     if let buffer = json["res"] as? [[String: Any]] {
                         let device = Device(payload: buffer[0])
                         self?.delegate?.didFetch(device: device)
+                    }
+                }
+            }
+        }
+        
+        downloadTask.resume()
+    }
+    
+    func deleteDevice(deviceID: String) -> Void {
+        guard let url = URLComponents(string: hostUrl + "device/remove/" + deviceID) else {
+            assertionFailure()
+            return
+        }
+        
+        var request = URLRequest(url: url.url!)
+        request.httpMethod = "POST"
+        
+        let downloadTask = URLSession.shared.dataTask(with: request) { [weak self] (data, response, error) in
+            if let data = data {
+                let rawJSON = try? JSONSerialization.jsonObject(with: data)
+                let json = rawJSON as? [String: Any]
+                
+                if let json = json {
+                    if let message = json["message"] as? String {
+                        self?.delegate?.didDeviceDeleted(message: message)
                     }
                 }
             }

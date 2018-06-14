@@ -15,6 +15,7 @@ class DevicesListViewController: UIViewController, DeviceSourceDelegate, UIColle
     
     var devices: [Device]?
     let deviceSource = DeviceSource()
+    let nc = NotificationCenter.default
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,10 +31,27 @@ class DevicesListViewController: UIViewController, DeviceSourceDelegate, UIColle
         
         deviceSource.delegate = self
         deviceSource.getDevices()
+        
+        nc.addObserver(self, selector: #selector(deleteDevice), name: Notification.Name(rawValue: "deviceDeleted"), object: nil)
     }
     
     @objc func pullToRefresh() {
         deviceSource.getDevices()
+    }
+    
+    @objc func deleteDevice(notification: Notification) {
+        if self.devices != nil {
+            for (index, element) in self.devices!.enumerated().reversed() {
+                if let id = element.id {
+                    let userInfo:Dictionary<String,String> = notification.userInfo as! Dictionary<String,String>
+                    let idToDelete = userInfo["id"]! as String
+                    if (id == idToDelete) {
+                        self.devices?.remove(at: index)
+                        self.devicesCollection.reloadData()
+                    }
+                }
+            }
+        }
     }
     
     func didFetchAll(devices: [Device]) {
