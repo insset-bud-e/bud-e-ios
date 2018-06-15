@@ -54,8 +54,8 @@ class DeviceDetailViewController: UIViewController, DeviceSourceDelegate {
     }
     
     func refreshUI() {
-        if let name = device?.name {
-            self.title = name
+        if let hostname = device?.hostname {
+            self.title = hostname
         }
         
         if let ipAddress = device?.ipAddress {

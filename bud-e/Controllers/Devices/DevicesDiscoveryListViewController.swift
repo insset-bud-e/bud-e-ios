@@ -16,7 +16,7 @@ class DevicesDiscoveryListViewController: UIViewController, DeviceDiscoveredSour
     var pullToRefreshControl: UIRefreshControl!
     
     var devices: [DeviceDiscovered]?
-    let deviceSource = DeviceDiscoveredSource()
+    let deviceDiscoveredSource = DeviceDiscoveredSource()
     var deviceSelected: [IndexPath]?
     
     override func viewDidLoad() {
@@ -38,18 +38,27 @@ class DevicesDiscoveryListViewController: UIViewController, DeviceDiscoveredSour
         pullToRefreshControl.addTarget(self, action: #selector(pullToRefresh), for: .valueChanged)
         devicesCollection.addSubview(pullToRefreshControl)
         
-        deviceSource.delegate = self
-        deviceSource.getDevicesDiscovered()
+        deviceDiscoveredSource.delegate = self
+        deviceDiscoveredSource.getDevicesDiscovered()
         spinner.startAnimating()
     }
     
     @objc func pullToRefresh() {
         self.noDevicesLabel.isHidden = true
-        deviceSource.getDevicesDiscovered()
+        deviceDiscoveredSource.getDevicesDiscovered()
     }
     
     @objc func onAddDevicesPressed() {
+        spinner.startAnimating()
+        self.navigationItem.rightBarButtonItem?.isEnabled = false
         
+        var devicesBuffer = [Dictionary<String, Any>]()
+        self.deviceSelected?.forEach { deviceIndex in
+            let deviceToAdd = self.devices?[deviceIndex.row]
+            devicesBuffer.append(["ip": deviceToAdd?.host ?? "Unknow", "hostname": deviceToAdd?.hostname ?? "Unknow", "port": deviceToAdd?.port ?? 0])
+        }
+        
+        self.deviceDiscoveredSource.saveDevicesDiscovered(devices: devicesBuffer)
     }
     
     func didFetch(devices: [DeviceDiscovered]) {
@@ -69,6 +78,21 @@ class DevicesDiscoveryListViewController: UIViewController, DeviceDiscoveredSour
             }
             else {
                 self.noDevicesLabel.isHidden = false
+            }
+        }
+    }
+    
+    func didSaveDevicesDiscovered(message: String) {
+        DispatchQueue.main.async {
+            if self.spinner.isAnimating {
+                self.spinner.stopAnimating()
+            }
+            if (message == "Devices added successfully.") {
+                self.deviceSelected?.forEach { deviceIndex in
+                    self.devices?.remove(at: deviceIndex.row)
+                }
+                self.deviceSelected = []
+                self.devicesCollection.reloadData()
             }
         }
     }

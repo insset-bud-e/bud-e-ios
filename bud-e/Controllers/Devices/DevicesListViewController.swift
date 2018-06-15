@@ -88,7 +88,7 @@ class DevicesListViewController: UIViewController, DeviceSourceDelegate, UIColle
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "deviceCell", for: indexPath)
         let deviceNameLabel = cell.viewWithTag(1) as? UILabel
         
-        deviceNameLabel?.text = device?.name
+        deviceNameLabel?.text = device?.hostname
         
         return cell
     }

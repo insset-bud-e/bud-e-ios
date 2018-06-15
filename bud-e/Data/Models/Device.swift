@@ -11,7 +11,7 @@ import Foundation
 
 class Device {
     let id: String?
-    let name: String?
+    let hostname: String?
     let ipAddress: String?
     let type: String?
     
@@ -23,11 +23,11 @@ class Device {
             self.id = "Unknow"
         }
         
-        if let name = payload["name"] as? String {
-            self.name = name
+        if let hostname = payload["hostname"] as? String {
+            self.hostname = hostname
         }
         else {
-            self.name = "Unknow"
+            self.hostname = "Unknow"
         }
         
         if let ip = payload["ip"] as? String {
